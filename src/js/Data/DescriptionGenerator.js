@@ -11,13 +11,13 @@ export default class DescriptionGenerator {
   }
 
   getDescription(property, value) {
-    switch(property) {
+    switch (property) {
       case 'display':
         return this.displayProperty[value];
       case 'flex-direction':
         return this.flexDirectionProperty[value];
       default:
-        return 'No descriptions...'
+        return 'No descriptions...';
     }
   }
 }

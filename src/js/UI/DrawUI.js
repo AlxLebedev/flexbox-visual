@@ -1,13 +1,16 @@
 export default class DrawUI {
   constructor() {
-    this.mainTitle = document.getElementById('main-title');
+    this.container = null;
+    this.descriptionElement = null;
   }
 
   changePropertyOfContainer(container, property, value) {
-    container.style[property] = value;
+    this.container = container;
+    this.container.style[property] = value;
   }
 
   changePropretyDescription(descriptionElement, descriptionText) {
-    descriptionElement.innerText = descriptionText;
+    this.descriptionElement = descriptionElement;
+    this.descriptionElement.innerText = descriptionText;
   }
 }
