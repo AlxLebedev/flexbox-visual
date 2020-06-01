@@ -13,10 +13,10 @@ let descriptionText = null;
 const flexContainerButtons = document.querySelectorAll('.flex-container-button');
 
 flexContainerButtons.forEach((button) => button.addEventListener('click', (event) => {
-  container = event.target.closest('.visual').lastElementChild;
-  property = container.id;
-  propertyValue = event.target.dataset.id;
-  descriptionElement = event.target.closest('.visual').nextElementSibling.firstElementChild;
+  container = event.target.closest('.container').lastElementChild;
+  property = container.dataset.prop;
+  propertyValue = event.target.dataset.value;
+  descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   descriptionText = descriprionGenerator.getDescription(property, propertyValue);
   drawUI.changePropertyOfContainer(container, property, propertyValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
