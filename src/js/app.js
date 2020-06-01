@@ -9,15 +9,21 @@ let property = null;
 let propertyValue = null;
 let descriptionElement = null;
 let descriptionText = null;
+let exampleCssField = null;
+let changableElementName = null;
 
-const flexContainerButtons = document.querySelectorAll('.flex-container-button');
+const changeContainerButtons = document.querySelectorAll('.flex-container-button');
 
-flexContainerButtons.forEach((button) => button.addEventListener('click', (event) => {
+changeContainerButtons.forEach((button) => button.addEventListener('click', (event) => {
   container = event.target.closest('.container').lastElementChild;
   property = container.dataset.prop;
   propertyValue = event.target.dataset.value;
   descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   descriptionText = descriprionGenerator.getDescription(property, propertyValue);
+  exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
+  changableElementName = event.target.closest('.container').dataset.id;
+
   drawUI.changePropertyOfContainer(container, property, propertyValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
+  drawUI.changeExampleCSS(exampleCssField, changableElementName, property, propertyValue);
 }));

@@ -8,6 +8,10 @@ body {
   color: #ffffff;
 }
 
+code {
+  font-family: courier, monospace;
+}
+
 .app-window {
   margin: auto;
   max-width: 1200px;
@@ -34,22 +38,51 @@ body {
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .button {
-  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
   padding: 10px;
+  margin: 10px 0 0 5px;
   border-radius: 10px;
   background-color: rgb(105, 34, 219);
   text-align: center;
   cursor: pointer;
 }
 
+.button:first-child {
+  margin: 10px 0 0 0;
+}
+
 .flex-items {
   display: flex;
-  margin-top: 20px;
+  position: relative;
+  margin-top: 40px;
+  padding: 10px;
   height: 200px;
+  border: 1px solid #1eff00;
+  border-radius: 10px;
+}
+
+.flex-items::before {
+  content: '.container';
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  top: -16px;
+  left: 16px;
+  padding: 0 7px 0 5px;
+  background-color: #1eff00;
+  font-family: courier, monospace;
+  font-size: 12px;
+  color: #000000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .flex-item {
@@ -83,9 +116,18 @@ body {
 
 .description {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: rgb(56, 56, 56);
+  border-radius: 10px;
+}
+
+.example-css-code {
+  height: max-content;
+  min-height: 80px;
+  padding: 10px;
+  background-color: #a5a5a5;
+  border-radius: 10px;
 }
 
 .block {
