@@ -16,6 +16,7 @@ export default class DrawUI {
   }
 
   changeExampleCSS(exampleCssField, changableElementName, property, propertyValue) {
+    this.exampleCssField = exampleCssField;
     const htmlMarkup = `
     <code>
     <pre>
@@ -24,6 +25,6 @@ export default class DrawUI {
     }
     </pre>
     </code>`;
-    exampleCssField.innerHTML = htmlMarkup;
+    this.exampleCssField.innerHTML = htmlMarkup;
   }
 }
