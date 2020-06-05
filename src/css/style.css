@@ -4,6 +4,7 @@
 }
 
 body {
+  min-width: 320px;
   background-color: #000000;
   color: #ffffff;
   font-size: 12px;
@@ -27,14 +28,23 @@ code {
   padding: 20px;
 }
 
+.property-title {
+  text-align: center;
+}
+
 .wrapper {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
 .container {
-  width: 50%;
   padding: 10px;
+}
+
+.visual {
+  max-width: 330px;
 }
 
 .buttons {
@@ -65,7 +75,7 @@ code {
   position: relative;
   margin-top: 40px;
   padding: 10px;
-  height: 200px;
+  height: 300px;
   border: 1px solid #1eff00;
   border-radius: 10px;
 }
@@ -90,8 +100,8 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 5px;
 }
 
@@ -121,6 +131,8 @@ code {
   justify-content: space-between;
   background-color: rgb(56, 56, 56);
   border-radius: 10px;
+  width: 100%;
+  min-height: 300px;
 }
 
 .description-block:nth-child(2) {
@@ -131,6 +143,7 @@ code {
   height: max-content;
   min-height: 80px;
   padding: 10px;
+  margin-top: 10px;
   background-color: #a5a5a5;
   border-radius: 10px;
 }

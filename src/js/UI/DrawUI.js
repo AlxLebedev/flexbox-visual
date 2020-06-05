@@ -23,11 +23,9 @@ export default class DrawUI {
     this.exampleCssField = exampleCssField;
     const htmlMarkup = `
     <code>
-    <pre>
     .${changableElementName} {
-      ${property}: ${propertyValue};
+    <pre>  ${property}: ${propertyValue};</pre>
     }
-    </pre>
     </code>`;
     this.exampleCssField.innerHTML = htmlMarkup;
   }
