@@ -173,8 +173,16 @@ h1 {
   display: block;
 }
 
-.stretch {
+.align-items-stretch {
   align-items: stretch;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 @media (min-width: 360px) and (max-width: 1024px) {
