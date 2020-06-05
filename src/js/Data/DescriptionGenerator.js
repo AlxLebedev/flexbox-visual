@@ -1,23 +1,25 @@
 export default class DescriptionGenerator {
   constructor() {
     this.displayProperty = {
-      block: 'Some text about display: block property in CSS3 and many usefull informations for students',
-      flex: 'Some text about display: flex property in CSS3 and many usefull informations for students',
+      common: 'Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе. В данном случа, свойство применяется к контейнеру, в котором располагаются элементы и влияет именно на отображение элементов внутри контейнера.',
+      block: 'При значении свойства block блочные элементы располагаются один над другим вертикально. Блочный элемент внутри контейнера стремится занять всю доступную ширину, но в нашем случае ширина и высота элементов ограничена, чтобы кубики были иенно кубиками. Блоки прилегают друг к другу вплотную, если нет внешних отступов.',
+      flex: 'Если родительскому контейнеру назначить свойство display со значение flex, то с этого момента элементы внутри флекс-контейнера можно называть флекс-элементами (flex-items). Флекс-элементы внутри флекс-контейнера располагаются друг за другом вплотную, их ширина подстраивается под контент, если не определена отдельно.',
     };
     this.flexDirectionProperty = {
-      row: 'Some text about flex-direction: row property in CSS3 and many usefull informations for students',
-      column: 'Some text about flex-direction: column property in CSS3 and many usefull informations for students',
-      'row-reverse': 'Some text about flex-direction: row-reverse property in CSS3 and many usefull informations for students',
-      'column-reverse': 'Some text about flex-direction: column-reverse property in CSS3 and many usefull informations for students',
+      common: 'Свойство применяется к флекс-контейнеру и задаёт направление основных осей в контейнере, тем самым определяет положение флекс-элементов в контейнере.',
+      row: 'Значение row определяет, что главная ось направлена так же, как и ориентация текста, по умолчанию слева направо.',
+      column: 'Значение column определяет, что, главная ось располагается вертикально и направлена сверху вниз.',
+      'row-reverse': 'Похоже на значение row, но меняются местами начальная и конечная точки и главная ось направлена справа налево.',
+      'column-reverse': 'Главная ось располагается вертикально, но меняется положение начальной и конечной точек и ось направлена снизу вверх.',
     };
   }
 
   getDescription(property, value) {
     switch (property) {
       case 'display':
-        return this.displayProperty[value];
+        return [this.displayProperty.common, this.displayProperty[value]];
       case 'flex-direction':
-        return this.flexDirectionProperty[value];
+        return [this.flexDirectionProperty.common, this.flexDirectionProperty[value]];
       default:
         return 'No descriptions...';
     }

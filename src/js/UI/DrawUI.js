@@ -12,7 +12,11 @@ export default class DrawUI {
 
   changePropretyDescription(descriptionElement, descriptionText) {
     this.descriptionElement = descriptionElement;
-    this.descriptionElement.innerText = descriptionText;
+    const [commonText, propertyValueText] = descriptionText;
+    const htmlMarkup = `
+    <p class = "description-block">${commonText}</p>
+    <p class = "description-block">${propertyValueText}</p>`;
+    this.descriptionElement.innerHTML = htmlMarkup;
   }
 
   changeExampleCSS(exampleCssField, changableElementName, property, propertyValue) {

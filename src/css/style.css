@@ -6,6 +6,7 @@
 body {
   background-color: #000000;
   color: #ffffff;
+  font-size: 12px;
 }
 
 code {
@@ -120,6 +121,10 @@ code {
   justify-content: space-between;
   background-color: rgb(56, 56, 56);
   border-radius: 10px;
+}
+
+.description-block:nth-child(2) {
+  margin-top: 10px;
 }
 
 .example-css-code {
