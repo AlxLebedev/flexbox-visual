@@ -59,15 +59,11 @@ h1 {
   justify-content: center;
   width: 140px;
   padding: 10px;
-  margin: 10px 0 0 5px;
+  margin-top: 10px;
   border-radius: 10px;
   background-color: rgb(105, 34, 219);
   text-align: center;
   cursor: pointer;
-}
-
-.button:first-child {
-  margin: 10px 0 0 0;
 }
 
 .flex-items {
@@ -153,7 +149,21 @@ h1 {
   display: block;
 }
 
+@media (min-width: 360px) and (max-width: 1024px) {
+  .button:nth-child(even) {
+    margin-left: 5px;
+  }
+}
+
 @media (min-width: 1025px) {
+  .property-title {
+    text-align: left;
+    margin-left: 60px;
+  }
+
+  .button:nth-child(even) {
+    margin-left: 5px;
+  }
   
   .wrapper {
     flex-direction: row;
