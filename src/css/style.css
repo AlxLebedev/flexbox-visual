@@ -103,22 +103,27 @@ h1 {
 
 .flex-item:nth-child(1) {
   background-color: rgb(250, 62, 62);
+  height: 25px;
 }
 
 .flex-item:nth-child(2) {
   background-color: rgb(250, 105, 8);
+  height: 65px;
 }
 
 .flex-item:nth-child(3) {
   background-color: rgb(212, 216, 0);
+  height: 35px;
 }
 
 .flex-item:nth-child(4) {
   background-color: rgb(64, 250, 8);
+  height: 55px;
 }
 
 .flex-item:nth-child(5) {
   background-color: rgb(8, 52, 250);
+  height: 75px;
 }
 
 .flex-item:nth-child(6) {
@@ -127,6 +132,7 @@ h1 {
 
 .flex-item:nth-child(7) {
   background-color: rgb(149, 0, 207);
+  height: 65px;
 }
 
 .flex-item:nth-child(8) {
