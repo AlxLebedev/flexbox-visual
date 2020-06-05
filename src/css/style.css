@@ -121,6 +121,18 @@ h1 {
   background-color: rgb(8, 52, 250);
 }
 
+.flex-item:nth-child(6) {
+  background-color: rgb(0, 28, 153);
+}
+
+.flex-item:nth-child(7) {
+  background-color: rgb(149, 0, 207);
+}
+
+.flex-item:nth-child(8) {
+  background-color: rgb(207, 0, 173);
+}
+
 .description {
   display: flex;
   flex-direction: column;

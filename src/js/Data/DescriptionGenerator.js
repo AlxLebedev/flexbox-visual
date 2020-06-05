@@ -12,6 +12,12 @@ export default class DescriptionGenerator {
       'row-reverse': 'Похоже на значение row, но меняются местами начальная и конечная точки и главная ось направлена справа налево.',
       'column-reverse': 'Главная ось располагается вертикально, но меняется положение начальной и конечной точек и ось направлена снизу вверх.',
     };
+    this.flexWrapProperty = {
+      common: 'Свойство применяется к флекс-контейнеру и задаёт возможность переноса флекс-элементов на новую строку, если они не помещаются в рамках флекс-контейнера. По умолчанию флекс-элементы выстраиваются в ряд и стараются уместиться в контейнере "ужимая" свою ширину.',
+      wrap: 'флекс-элементы будут перенесены на несколько строк сверху вниз.',
+      nowrap: 'Все флекс-элементы будут в одной строке.',
+      'wrap-reverse': 'флекс-элементы будут перенесены на несколько строк снизу вверх.',
+    };
   }
 
   getDescription(property, value) {
@@ -20,6 +26,8 @@ export default class DescriptionGenerator {
         return [this.displayProperty.common, this.displayProperty[value]];
       case 'flex-direction':
         return [this.flexDirectionProperty.common, this.flexDirectionProperty[value]];
+      case 'flex-wrap':
+        return [this.flexWrapProperty.common, this.flexWrapProperty[value]];
       default:
         return 'No descriptions...';
     }
