@@ -27,6 +27,14 @@ export default class DescriptionGenerator {
       'space-around': 'Элементы равномерно распределены по линии с одинаковым пространством вокруг них. Обратите внимание, что визуально пространства не равны, так как все элементы имеют одинаковое пространство с обеих сторон. Первый элемент будет иметь одну единицу пространства напротив края контейнера, но две единицы пространства между следующим элементом, потому что у следующего элемента есть свой собственный интервал, который применяется.',
       'space-evenly': 'Элементы распределяются таким образом, чтобы расстояние между любыми двумя элементами (и расстояние до краев) было одинаковым.',
     };
+    this.alignItemsProperty = {
+      common: 'Это свойство определяет поведение по умолчанию того, как flex элементы располагаются вдоль поперечной оси на текущей линии. Думайте об этом как о justify-content версии для поперечной оси (перпендикулярной главной оси).',
+      'stretch': 'Значение stretch является значением по умолчанию для флекс-контейнера - элементы растягиваются, чтобы заполнить контейнер (все еще соблюдаются min-width / max-width).',
+      'flex-start': 'Элементы размещаются в начале поперечной оси.',
+      'flex-end': 'Элементы располагаются в конце поперечной оси',
+      'center': 'Элементы центрированы по поперечной оси',
+      'baseline': 'Элементы выровнены, по их базовой линии.',
+    };
   }
 
   getDescription(property, value) {
@@ -39,6 +47,8 @@ export default class DescriptionGenerator {
         return [this.flexWrapProperty.common, this.flexWrapProperty[value]];
       case 'justify-content':
         return [this.justifyContentProperty.common, this.justifyContentProperty[value]];
+      case 'align-items':
+        return [this.alignItemsProperty.common, this.alignItemsProperty[value]];
       default:
         return 'No descriptions...';
     }
