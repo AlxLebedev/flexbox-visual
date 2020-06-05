@@ -19,7 +19,7 @@ code {
   max-width: 1200px;
 }
 
-.title {
+h1 {
   width: max-content;
   margin: 50px auto 50px auto;
 }
@@ -44,7 +44,7 @@ code {
 }
 
 .visual {
-  max-width: 330px;
+  max-width: 320px;
 }
 
 .buttons {
@@ -57,7 +57,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 140px;
   padding: 10px;
   margin: 10px 0 0 5px;
   border-radius: 10px;
@@ -132,6 +132,7 @@ code {
   background-color: rgb(56, 56, 56);
   border-radius: 10px;
   width: 100%;
+  max-width: 700px;
   min-height: 300px;
 }
 
@@ -150,4 +151,13 @@ code {
 
 .block {
   display: block;
+}
+
+@media (min-width: 1025px) {
+  
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: unset;
+  }
 }
