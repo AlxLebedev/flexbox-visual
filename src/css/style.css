@@ -24,6 +24,16 @@ h1 {
   margin: 50px auto 50px auto;
 }
 
+.separator {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+}
+
 .section {
   padding: 20px;
 }
@@ -49,8 +59,10 @@ h1 {
 
 .buttons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  /* flex-wrap: wrap;
+  justify-content: space-evenly; */
 }
 
 .button {
@@ -72,6 +84,7 @@ h1 {
   position: relative;
   margin-top: 40px;
   padding: 10px;
+  width: 300px;
   height: 300px;
   border: 1px solid #1eff00;
   border-radius: 10px;
@@ -186,6 +199,12 @@ h1 {
 }
 
 @media (min-width: 360px) and (max-width: 1024px) {
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
   .button:nth-child(even) {
     margin-left: 5px;
   }
@@ -195,6 +214,12 @@ h1 {
   .property-title {
     text-align: left;
     margin-left: 60px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .button:nth-child(even) {
