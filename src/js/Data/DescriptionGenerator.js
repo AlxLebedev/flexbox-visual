@@ -52,6 +52,12 @@ export default class DescriptionGenerator {
       '3': 'Если дать элементу значение 3, то он будет перемещен после всех элементов с order 2 и выстроен попорядку среди равных себе.',
       '4': 'Если дать элементу значение 4, то он будет перемещен после всех элементов с order 3 и выстроен попорядку среди равных себе.',
     };
+    this.flexGrowProperty = {
+      common: 'Это свойство определяет способность flex элемента растягиваться в случае необходимости. Оно принимает значение от нуля, которое служит пропорцией. Это свойство, какое количество доступного пространства внутри гибкого контейнера должен занимать элемент.',
+      '0': 'Ноль - это значение по умолчанию.',
+      '1': 'Если для всех элементов flex-grow установлено значение 1, оставшееся пространство в контейнере будет равномерно распределено между всеми дочерними элементами.',
+      '2': 'Если один из дочерних элементов имеет значение 2, этот элемент займет в два раза больше места, чем остальные (или попытается, по крайней мере).',
+    };
   }
 
   getDescription(property, value) {
@@ -70,6 +76,8 @@ export default class DescriptionGenerator {
         return [this.alignContentProperty.common, this.alignContentProperty[value]];
       case 'order':
         return [this.orderProperty.common, this.orderProperty[value]];
+      case 'flex-grow':
+        return [this.flexGrowProperty.common, this.flexGrowProperty[value]];
       default:
         return 'No descriptions...';
     }
