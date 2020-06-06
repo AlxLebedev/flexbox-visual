@@ -50,7 +50,7 @@ const changeFlexItemPropertyButtons = document.querySelectorAll('.property-item-
 changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click', (event) => {
   propertyButtons = event.target.parentElement.querySelectorAll('.button');
   property = event.target.closest('.container').lastElementChild.dataset.prop;
-  propertyValue = +(event.target.dataset.value);
+  propertyValue = event.target.dataset.value;
 
   descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   descriptionText = descriprionGenerator.getDescription(property, propertyValue);

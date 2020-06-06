@@ -64,6 +64,12 @@ export default class DescriptionGenerator {
       '1': 'Выбрано значение 1.',
       '2': 'выбрано значение 2.',
     };
+    this.flexBasisProperty = {
+      common: 'Это свойство определяет размер элемента по умолчанию перед распределением оставшегося пространства.',
+      '0': 'Если установлено значение 0, дополнительное пространство вокруг содержимого не учитывается.',
+      '20%': 'Размер элемента по умолчанию перед распределением оставшегося пространства будет 20% от ширины родителя.',
+      '5rem': 'Размер элемента по умолчанию перед распределением оставшегося пространства будет 5 величин размере шрифта элемента html.',
+    };
   }
 
   getDescription(property, value) {
@@ -86,6 +92,8 @@ export default class DescriptionGenerator {
         return [this.flexGrowProperty.common, this.flexGrowProperty[value]];
       case 'flex-shrink':
         return [this.flexShrinkProperty.common, this.flexShrinkProperty[value]];
+      case 'flex-basis':
+        return [this.flexBasisProperty.common, this.flexBasisProperty[value]];
       default:
         return 'No descriptions...';
     }
