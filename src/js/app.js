@@ -41,7 +41,7 @@ selectFlexItemButtons.forEach((button) => button.addEventListener('click', (even
   itemElementIndex = +(event.target.innerText) - 1;
   itemFlexElement = event.target.closest('.container').querySelectorAll('.flex-item')[itemElementIndex];
   itemButtons = event.target.parentElement.querySelectorAll('.select-item-button');
-  
+
   drawUI.changeActiveButton(itemButtons, event.target);
 }));
 

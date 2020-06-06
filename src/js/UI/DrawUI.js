@@ -3,7 +3,7 @@ export default class DrawUI {
     this.element = null;
     this.descriptionElement = null;
     this.exampleCssField = null;
-    this.currentButtons - null;
+    this.currentButtons = null;
   }
 
   changePropertyOfElement(element, property, value) {
@@ -33,11 +33,11 @@ export default class DrawUI {
 
   changeActiveButton(buttons, targetButton) {
     this.currentButtons = buttons;
-    this.currentButtons.forEach(button => {
+    this.currentButtons.forEach((button) => {
       if (button.classList.contains('active')) {
-        button.classList.remove('active')
+        button.classList.remove('active');
       }
-    })
+    });
     targetButton.classList.add('active');
   }
 }
