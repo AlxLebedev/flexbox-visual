@@ -11,6 +11,7 @@ let descriptionElement = null;
 let descriptionText = null;
 let exampleCssField = null;
 let changableElementName = null;
+let currentButtons = null;
 
 const changeContainerButtons = document.querySelectorAll('.flex-container-button');
 
@@ -22,7 +23,9 @@ changeContainerButtons.forEach((button) => button.addEventListener('click', (eve
   descriptionText = descriprionGenerator.getDescription(property, propertyValue);
   exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
   changableElementName = event.target.closest('.container').dataset.id;
+  currentButtons = event.target.parentElement.querySelectorAll('.button');
 
+  drawUI.changeActiveButton(currentButtons, event.target);
   drawUI.changePropertyOfContainer(container, property, propertyValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, property, propertyValue);
