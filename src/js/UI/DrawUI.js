@@ -4,6 +4,7 @@ export default class DrawUI {
     this.descriptionElement = null;
     this.exampleCssField = null;
     this.currentButtons = null;
+    this.targetButton = null;
   }
 
   changePropertyOfElement(element, property, value) {
@@ -31,7 +32,7 @@ export default class DrawUI {
     this.exampleCssField.innerHTML = htmlMarkup;
   }
 
-  changeActiveButton(buttons, targetButton) {
+  changeActivePropertyButton(buttons, targetButton) {
     this.currentButtons = buttons;
     this.currentButtons.forEach((button) => {
       if (button.classList.contains('active')) {
@@ -39,5 +40,19 @@ export default class DrawUI {
       }
     });
     targetButton.classList.add('active');
+  }
+
+  clearActiveButtons(buttons) {
+    this.currentButtons = buttons;
+    this.currentButtons.forEach((button) => {
+      if (button.classList.contains('active')) {
+        button.classList.remove('active');
+      }
+    });
+  }
+
+  setActiveButton(targetButton) {
+    this.targetButton = targetButton;
+    this.targetButton.classList.add('active');
   }
 }
