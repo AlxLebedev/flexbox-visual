@@ -32,7 +32,7 @@ export default class DescriptionGenerator {
       stretch: 'Значение stretch является значением по умолчанию для флекс-контейнера - элементы растягиваются, чтобы заполнить контейнер (все еще соблюдаются min-width / max-width).',
       'flex-start': 'Элементы размещаются в начале поперечной оси.',
       'flex-end': 'Элементы располагаются в конце поперечной оси.',
-      center: 'Элементы центрированы по поперечной оси',
+      center: 'Элементы центрированы по поперечной оси.',
       baseline: 'Элементы выровнены, по их базовой линии.',
     };
     this.alignContentProperty = {
@@ -44,6 +44,15 @@ export default class DescriptionGenerator {
       'space-between': 'Элементы равномерно распределены; первая строка находится в начале контейнера, а последняя — в конце.',
       'space-around': 'Элементы равномерно распределены с равным пространством вокруг каждой строки.',
       'space-evenly': 'Элементы распределены равномерно, вокруг них одинаковое пространство.',
+    };
+    this.alignSelfProperty = {
+      common: 'Это свойство позволяет переопределить выравнивание по умолчанию (или указанное с помощью align-items) для отдельных флекс-элементов.',
+      auto: 'Значение auto является значением по умолчанию.',
+      'flex-start': 'Элемент размещается в начале поперечной оси.',
+      'flex-end': 'Элемент размещается в конце поперечной оси.',
+      center: 'Элемент центрируется по поперечной оси.',
+      baseline: 'Элемент выровнен по базовой линии.',
+      stretch: '"Элемент растягивается, чтобы заполнить контейнер.',
     };
     this.orderProperty = {
       common: 'По умолчанию flex элементы располагаются в исходном порядке. Однако свойство order управляет порядком их появления во флекс-контейнере. По умолчанию значение order равняется 1.',
@@ -86,6 +95,8 @@ export default class DescriptionGenerator {
         return [this.alignItemsProperty.common, this.alignItemsProperty[value]];
       case 'align-content':
         return [this.alignContentProperty.common, this.alignContentProperty[value]];
+      case 'align-self':
+        return [this.alignSelfProperty.common, this.alignSelfProperty[value]];
       case 'order':
         return [this.orderProperty.common, this.orderProperty[value]];
       case 'flex-grow':
