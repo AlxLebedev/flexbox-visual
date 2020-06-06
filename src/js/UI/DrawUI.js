@@ -1,14 +1,14 @@
 export default class DrawUI {
   constructor() {
-    this.container = null;
+    this.element = null;
     this.descriptionElement = null;
     this.exampleCssField = null;
     this.currentButtons - null;
   }
 
-  changePropertyOfContainer(container, property, value) {
-    this.container = container;
-    this.container.style[property] = value;
+  changePropertyOfElement(element, property, value) {
+    this.element = element;
+    this.element.style[property] = value;
   }
 
   changePropretyDescription(descriptionElement, descriptionText) {

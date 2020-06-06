@@ -63,11 +63,32 @@ h1 {
   align-items: center;
 }
 
+.items-buttons {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 140px;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: rgb(105, 34, 219);
+  text-align: center;
+  cursor: pointer;
+}
+
+.select-item-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   padding: 10px;
   margin-top: 15px;
   border-radius: 10px;
@@ -201,7 +222,9 @@ h1 {
 }
 
 @media (min-width: 360px) and (max-width: 1024px) {
-  .buttons {
+  .property-buttons {
+    display: flex;
+    margin-bottom: 10px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -218,7 +241,8 @@ h1 {
     margin-left: 60px;
   }
 
-  .buttons {
+  .property-buttons {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;

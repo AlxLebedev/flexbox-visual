@@ -45,6 +45,13 @@ export default class DescriptionGenerator {
       'space-around': 'Элементы равномерно распределены с равным пространством вокруг каждой строки.',
       'space-evenly': 'Элементы распределены равномерно, вокруг них одинаковое пространство.',
     };
+    this.orderProperty = {
+      common: 'По умолчанию flex элементы располагаются в исходном порядке. Однако свойство order управляет порядком их появления во флекс-контейнере. По умолчанию значение order равняется 1.',
+      '1': 'Если дать элементу значение 1, то он будет перемещен в начало строки и выстроен по порядку в зависимости от других элементов, имеющих такое же значение order.',
+      '2': 'Если дать элементу значение 2, то он будет перемещен после всех элементов с order 1 и выстроен попорядку среди равных себе.',
+      '3': 'Если дать элементу значение 3, то он будет перемещен после всех элементов с order 2 и выстроен попорядку среди равных себе.',
+      '4': 'Если дать элементу значение 4, то он будет перемещен после всех элементов с order 3 и выстроен попорядку среди равных себе.',
+    };
   }
 
   getDescription(property, value) {
@@ -61,6 +68,8 @@ export default class DescriptionGenerator {
         return [this.alignItemsProperty.common, this.alignItemsProperty[value]];
       case 'align-content':
         return [this.alignContentProperty.common, this.alignContentProperty[value]];
+      case 'order':
+        return [this.orderProperty.common, this.orderProperty[value]];
       default:
         return 'No descriptions...';
     }
