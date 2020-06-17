@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +7,11 @@
 
 body {
   min-width: 320px;
-  background-color: #000000;
   color: #ffffff;
-  font-size: 12px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to bottom right, #002c3c, #330e1c) 0 100%;
+  background-attachment: fixed;  
 }
 
 code {
@@ -20,8 +24,33 @@ code {
 }
 
 h1 {
+  font-size: 80px;
   width: max-content;
   margin: 50px auto 50px auto;
+}
+
+h2 {
+  font-size: 25px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, rgb(204, 93, 120), rgba(204, 93, 120, 0.50));
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 16px;
 }
 
 .separator {
@@ -31,7 +60,10 @@ h1 {
   padding: 5px;
   justify-content: center;
   text-align: center;
-  border-bottom: 1px solid #ffffff;
+}
+
+.separator:nth-of-type(n + 2) {
+  margin-top: 50px;
 }
 
 .section {
@@ -46,7 +78,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .container {
@@ -78,7 +110,8 @@ h1 {
   padding: 10px;
   margin-top: 15px;
   border-radius: 10px;
-  background-color: rgb(105, 34, 219);
+  background-color: transparent;
+  border: 1px solid #cbd6dc;
   text-align: center;
   cursor: pointer;
 }
@@ -92,13 +125,16 @@ h1 {
   padding: 10px;
   margin-top: 15px;
   border-radius: 10px;
-  background-color: rgb(105, 34, 219);
+  background-color: transparent;
+  border: 1px solid #cbd6dc;
   text-align: center;
   cursor: pointer;
 }
 
 .active {
-  box-shadow: 0px 0px 5px 5px rgb(147, 79, 255);
+  border-color: #f3f3f3;
+  background-color: #f3f3f3;
+  color: #032c3c;
 }
 
 .flex-items {
@@ -109,7 +145,7 @@ h1 {
   padding: 10px;
   width: 300px;
   height: 300px;
-  border: 1px solid #1eff00;
+  border: 1px solid #cbd6dc;
   border-radius: 10px;
 }
 
@@ -121,7 +157,7 @@ h1 {
   top: -16px;
   left: 16px;
   padding: 0 7px 0 5px;
-  background-color: #1eff00;
+  background-color: #cbd6dc;
   font-family: courier, monospace;
   font-size: 12px;
   color: #000000;
@@ -140,53 +176,53 @@ h1 {
 }
 
 .flex-item:nth-child(1) {
-  background-color: rgb(250, 62, 62);
+  background-color: #7b1a2e;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 
 .flex-item:nth-child(2) {
-  background-color: rgb(250, 105, 8);
+  background-color: #df7121;
 }
 
 .flex-item:nth-child(3) {
-  background-color: rgb(212, 216, 0);
+  background-color: #a9a44c;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .flex-item:nth-child(4) {
-  background-color: rgb(64, 250, 8);
+  background-color: #578c3f;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .flex-item:nth-child(5) {
-  background-color: rgb(8, 52, 250);
+  background-color: #099e9b;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 .flex-item:nth-child(6) {
-  background-color: rgb(0, 28, 153);
+  background-color: #0b6c8e;
 }
 
 .flex-item:nth-child(7) {
-  background-color: rgb(149, 0, 207);
+  background-color: #595071;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .flex-item:nth-child(8) {
-  background-color: rgb(207, 0, 173);
+  background-color: #7d4672;
 }
 
 .description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgb(56, 56, 56);
-  border-radius: 10px;
+  background-color: #00000040;
+  padding: 20px;
   width: 100%;
   max-width: 700px;
   min-height: 300px;
@@ -201,8 +237,8 @@ h1 {
   min-height: 80px;
   padding: 10px;
   margin-top: 10px;
-  background-color: #a5a5a5;
-  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #032c3c;
 }
 
 .block {
