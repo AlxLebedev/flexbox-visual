@@ -16,6 +16,7 @@ body {
 
 code {
   font-family: courier, monospace;
+  font-size: 11px;
 }
 
 .app-window {
@@ -24,13 +25,14 @@ code {
 }
 
 h1 {
-  font-size: 80px;
-  width: max-content;
+  font-size: 40px;
+  text-align: center;
   margin: 50px auto 50px auto;
+  padding: 0 10px;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 20px;
   padding-bottom: 10px;
   border-bottom: 5px solid;
   border-image-slice: 1;
@@ -82,7 +84,7 @@ h6 {
 }
 
 .container {
-  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .visual {
@@ -143,7 +145,7 @@ h6 {
   position: relative;
   margin-top: 40px;
   padding: 10px;
-  width: 300px;
+  width: 280px;
   height: 300px;
   border: 1px solid #cbd6dc;
   border-radius: 10px;
@@ -154,8 +156,8 @@ h6 {
   position: absolute;
   width: max-content;
   height: max-content;
-  top: -16px;
-  left: 16px;
+  top: -14px;
+  left: 14px;
   padding: 0 7px 0 5px;
   background-color: #cbd6dc;
   font-family: courier, monospace;
@@ -258,6 +260,18 @@ h6 {
 }
 
 @media (min-width: 360px) and (max-width: 1024px) {
+  code {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
   .property-buttons {
     display: flex;
     margin-bottom: 10px;
@@ -272,6 +286,10 @@ h6 {
 }
 
 @media (min-width: 1025px) {
+  h1 {
+    font-size: 80px;
+  }
+
   .property-title {
     text-align: left;
     margin-left: 60px;
