@@ -38,8 +38,9 @@ const selectFlexItemButtons = document.querySelectorAll('.select-item-button');
 selectFlexItemButtons.forEach((button) => button.addEventListener('click', (event) => {
   const currentFlexItemsButtons = event.target.closest('.items-buttons').children;
 
-  const flexItems = event.target.closest('.container').lastElementChild.children;
-  console.log(flexItems);
+  const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
+  const [ flexItem ] = flexItems.filter( item => item.innerText === event.target.innerText);
+  console.log(flexItem);
 
   drawUI.clearActiveButtons(currentFlexItemsButtons);
   drawUI.setActiveButton(event.target);
