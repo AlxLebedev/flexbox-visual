@@ -37,6 +37,10 @@ const selectFlexItemButtons = document.querySelectorAll('.select-item-button');
 
 selectFlexItemButtons.forEach((button) => button.addEventListener('click', (event) => {
   const currentFlexItemsButtons = event.target.closest('.items-buttons').children;
+
+  const flexItems = event.target.closest('.container').lastElementChild.children;
+  console.log(flexItems);
+
   drawUI.clearActiveButtons(currentFlexItemsButtons);
   drawUI.setActiveButton(event.target);
 }));
@@ -58,6 +62,8 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
   const activeElementIndex = +(activeFlexItemButton.innerText) - 1;
   const flexItemsElements = event.target.closest('.container').lastElementChild.children;
   itemFlexElement = flexItemsElements[activeElementIndex];
+
+  itemFlexElement.setAttribute('data-value', event.target.dataset.value);
 
   drawUI.changeActivePropertyButton(propertyButtons, event.target);
   drawUI.changePropertyOfElement(itemFlexElement, property, propertyValue);
