@@ -4,45 +4,34 @@ import DescriptionGenerator from './Data/DescriptionGenerator';
 const drawUI = new DrawUI();
 const descriprionGenerator = new DescriptionGenerator();
 
-let container = null;
-let property = null;
-let propertyValue = null;
-let descriptionElement = null;
-let descriptionText = null;
-let exampleCssField = null;
-let changableElementName = null;
-let propertyButtons = null;
+const changeContainerPropertyButtons = document.querySelectorAll('.flex-container-button');
 
-let itemFlexElement = null;
-
-const changeContainerButtons = document.querySelectorAll('.flex-container-button');
-
-changeContainerButtons.forEach((button) => button.addEventListener('click', (event) => {
-  container = event.target.closest('.container').lastElementChild;
-  property = container.dataset.prop;
-  propertyValue = event.target.dataset.value;
-  descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
-  descriptionText = descriprionGenerator.getDescription(property, propertyValue);
-  exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
-  changableElementName = event.target.closest('.container').dataset.id;
-  propertyButtons = event.target.parentElement.querySelectorAll('.button');
+changeContainerPropertyButtons.forEach((button) => button.addEventListener('click', (event) => {
+  const propertyButtons = event.target.parentElement.querySelectorAll('.button');
+  const container = event.target.closest('.container').lastElementChild;
+  const containerProperty = container.dataset.prop;
+  const containerPropertyValue = event.target.dataset.value;
+  const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
+  const descriptionText = descriprionGenerator.getDescription(containerProperty, containerPropertyValue);
+  const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
+  const changableElementName = event.target.closest('.container').dataset.id;
 
   drawUI.changeActivePropertyButton(propertyButtons, event.target);
-  drawUI.changePropertyOfElement(container, property, propertyValue);
+  drawUI.changePropertyOfElement(container, containerProperty, containerPropertyValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
-  drawUI.changeExampleCSS(exampleCssField, changableElementName, property, propertyValue);
+  drawUI.changeExampleCSS(exampleCssField, changableElementName, containerProperty, containerPropertyValue);
 }));
 
-const selectFlexItemButtons = document.querySelectorAll('.select-item-button');
+const allFlexItemsSelectionButtons = document.querySelectorAll('.select-item-button');
 
-selectFlexItemButtons.forEach((button) => button.addEventListener('click', (event) => {
-  const flexItemsSelectionButtons = Array.from(event.target.closest('.items-buttons').children);
+allFlexItemsSelectionButtons.forEach((button) => button.addEventListener('click', (event) => {
+  const currentFlexItemsSelectionButtons = Array.from(event.target.closest('.items-buttons').children);
   const propertiesButtons = Array.from(event.target.parentElement.nextElementSibling.children);
   const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
-  const [ flexItem ] = flexItems.filter( item => item.innerText === event.target.innerText);
-  const [ flexProprtyButton ] = propertiesButtons.filter( button => button.dataset.value === flexItem.dataset.value);
+  const [ selectedFlexItem ] = flexItems.filter( item => item.innerText === event.target.innerText);
+  const [ propertyButtonOfSelectedFlexItem ] = propertiesButtons.filter( button => button.dataset.value === selectedFlexItem.dataset.value);
   const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
-  const flexItemValue = flexItem.dataset.value;
+  const flexItemValue = selectedFlexItem.dataset.value;
   
   const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   const descriptionText = descriprionGenerator.getDescription(flexItemProperty, flexItemValue);
@@ -50,9 +39,9 @@ selectFlexItemButtons.forEach((button) => button.addEventListener('click', (even
   const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
   const changableElementName = event.target.closest('.container').dataset.id;
 
-  drawUI.clearActiveButtons(flexItemsSelectionButtons);
+  drawUI.clearActiveButtons(currentFlexItemsSelectionButtons);
   drawUI.setActiveButton(event.target);
-  drawUI.changeActivePropertyButton(propertiesButtons, flexProprtyButton);
+  drawUI.changeActivePropertyButton(propertiesButtons, propertyButtonOfSelectedFlexItem);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
@@ -60,25 +49,26 @@ selectFlexItemButtons.forEach((button) => button.addEventListener('click', (even
 const changeFlexItemPropertyButtons = document.querySelectorAll('.property-item-button');
 
 changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click', (event) => {
-  propertyButtons = event.target.parentElement.querySelectorAll('.button');
-  property = event.target.closest('.container').lastElementChild.dataset.prop;
-  propertyValue = event.target.dataset.value;
+  const propertiesButtons = event.target.parentElement.querySelectorAll('.button');
+  const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
+  const flexItemValue = event.target.dataset.value;
 
-  descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
-  descriptionText = descriprionGenerator.getDescription(property, propertyValue);
-  exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
-  changableElementName = event.target.closest('.container').dataset.id;
+  const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
+  const descriptionText = descriprionGenerator.getDescription(flexItemProperty, flexItemValue);
+  const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
+  const changableElementName = event.target.closest('.container').dataset.id;
 
-  // определяем itemFlexElement по признаку 'active' и устанавливаем уму data-value такой же как у кнопки
+  // определяем itemFlexElement по признаку 'active' и устанавливаем ему data-value такой же как у кнопки
   const flexItemsButtons = Array.from(event.target.closest('.container').firstElementChild.firstElementChild.children);
   const [ activeFlexItemButton ] = flexItemsButtons.filter( element => element.classList.contains('active'));
   const activeElementIndex = +(activeFlexItemButton.innerText) - 1;
   const flexItemsElements = event.target.closest('.container').lastElementChild.children;
-  itemFlexElement = flexItemsElements[activeElementIndex];
+  const itemFlexElement = flexItemsElements[activeElementIndex];
+
   itemFlexElement.setAttribute('data-value', event.target.dataset.value);
 
-  drawUI.changeActivePropertyButton(propertyButtons, event.target);
-  drawUI.changePropertyOfElement(itemFlexElement, property, propertyValue);
+  drawUI.changeActivePropertyButton(propertiesButtons, event.target);
+  drawUI.changePropertyOfElement(itemFlexElement, flexItemProperty, flexItemValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
-  drawUI.changeExampleCSS(exampleCssField, changableElementName, property, propertyValue);
+  drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
