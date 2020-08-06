@@ -59,11 +59,11 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
   const changableElementName = event.target.closest('.container').dataset.id;
 
   // определяем itemFlexElement по признаку 'active' и устанавливаем ему data-value такой же как у кнопки
-  const flexItemsButtons = Array.from(event.target.closest('.container').firstElementChild.firstElementChild.children);
-  const [ activeFlexItemButton ] = flexItemsButtons.filter( element => element.classList.contains('active'));
-  const activeElementIndex = +(activeFlexItemButton.innerText) - 1;
+  const currentFlexItemsSelectionButtons = Array.from(event.target.closest('.container').firstElementChild.firstElementChild.children);
+  const [ activeFlexItemsSelectionButton ] = currentFlexItemsSelectionButtons.filter( element => element.classList.contains('active'));
+  const activeFlexItemIndex = +(activeFlexItemsSelectionButton.innerText) - 1;
   const flexItemsElements = event.target.closest('.container').lastElementChild.children;
-  const itemFlexElement = flexItemsElements[activeElementIndex];
+  const itemFlexElement = flexItemsElements[activeFlexItemIndex];
 
   itemFlexElement.setAttribute('data-value', event.target.dataset.value);
 
