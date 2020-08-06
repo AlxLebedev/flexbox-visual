@@ -25,7 +25,7 @@ module.exports = {
     ]),
   ],
   devServer: {
-    port: 8080,
+    overlay: true,
   },
   module: {
     rules: [
