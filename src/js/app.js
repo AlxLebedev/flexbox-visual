@@ -13,7 +13,6 @@ let exampleCssField = null;
 let changableElementName = null;
 let propertyButtons = null;
 
-let itemElementIndex = null;
 let itemFlexElement = null;
 
 const changeContainerButtons = document.querySelectorAll('.flex-container-button');
@@ -37,10 +36,8 @@ changeContainerButtons.forEach((button) => button.addEventListener('click', (eve
 const selectFlexItemButtons = document.querySelectorAll('.select-item-button');
 
 selectFlexItemButtons.forEach((button) => button.addEventListener('click', (event) => {
-  itemElementIndex = +(event.target.innerText) - 1;
-  itemFlexElement = event.target.closest('.container').querySelectorAll('.flex-item')[itemElementIndex];
-
-  drawUI.clearActiveButtons(selectFlexItemButtons);
+  const currentFlexItemsButtons = event.target.closest('.items-buttons').children;
+  drawUI.clearActiveButtons(currentFlexItemsButtons);
   drawUI.setActiveButton(event.target);
 }));
 
@@ -55,6 +52,12 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
   descriptionText = descriprionGenerator.getDescription(property, propertyValue);
   exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
   changableElementName = event.target.closest('.container').dataset.id;
+
+  const flexItemsButtons = Array.from(event.target.closest('.container').firstElementChild.firstElementChild.children);
+  const [ activeFlexItemButton ] = flexItemsButtons.filter( element => element.classList.contains('active'));
+  const activeElementIndex = +(activeFlexItemButton.innerText) - 1;
+  const flexItemsElements = event.target.closest('.container').lastElementChild.children;
+  itemFlexElement = flexItemsElements[activeElementIndex];
 
   drawUI.changeActivePropertyButton(propertyButtons, event.target);
   drawUI.changePropertyOfElement(itemFlexElement, property, propertyValue);
