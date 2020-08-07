@@ -266,7 +266,14 @@ h6 {
 }
 
 .inputs__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: 15px auto;
+}
+
+.inputs__container {
+  margin: auto;
 }
 
 .inputs__text {
@@ -284,6 +291,17 @@ h6 {
   width: 50px;
   font-size: 15px;
   text-align: center;
+}
+
+.inputs-units-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.inputs-units-button {
+  width: 50px;
 }
 
 @media (min-width: 360px) and (max-width: 1024px) {
@@ -305,10 +323,6 @@ h6 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .button:nth-child(even) {
-    margin-left: 7px;
   }
 }
 
@@ -342,10 +356,6 @@ h6 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .button:nth-child(even) {
-    margin-left: 5px;
   }
   
   .wrapper {
