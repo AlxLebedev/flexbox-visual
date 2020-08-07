@@ -101,8 +101,16 @@ inputsFields.forEach((input) => input.addEventListener('change', (event) => {
   const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
   const [ activeFlexItem ] = flexItems.filter(flexItem => flexItem.dataset.ordinal === event.target.dataset.ordinal);
 
-  console.log(activeFlexItem);
+  const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
+  const descriptionText = descriprionGenerator.getDescription(flexItemProperty, flexItemValue);
+  const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
+  const changableElementName = event.target.closest('.container').dataset.id;
 
-  console.log(flexItemProperty);
-  console.log(flexItemValue);
+  drawUI.changePropertyOfElement(activeFlexItem, flexItemProperty, flexItemValue);
+  drawUI.changePropretyDescription(descriptionElement, descriptionText);
+  drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
+
+  // console.log(flexItemProperty);
+  // console.log(flexItemValue);
+  // console.log(activeFlexItem);
 }))
