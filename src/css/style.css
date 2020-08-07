@@ -258,6 +258,34 @@ h6 {
   flex-wrap: wrap;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+}
+
+.inputs__item {
+  margin: 15px auto;
+}
+
+.inputs__text {
+  margin-right: 10px;
+}
+
+.inputs__field {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 5px;
+  width: 50px;
+  font-size: 15px;
+  text-align: center;
+}
+
 @media (min-width: 360px) and (max-width: 1024px) {
   code {
     font-size: 12px;
