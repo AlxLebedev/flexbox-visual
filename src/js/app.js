@@ -72,3 +72,37 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
+
+const inputsUnitsButtons = document.querySelectorAll('.inputs-units-button')
+
+inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) => {
+  const currentInputsUnitsButtons = Array.from(event.target.parentElement.querySelectorAll('.inputs-units-button'));
+  drawUI.changeActivePropertyButton(currentInputsUnitsButtons, event.target);
+}));
+
+const inputsFields = document.querySelectorAll('.inputs__field');
+
+inputsFields.forEach((input) => input.addEventListener('change', (event) => {
+  if(event.target.value === '') {
+    return;
+  }
+  const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
+  let flexItemValue = null;
+
+  if (event.target.parentElement.nextElementSibling) {
+    const currentInputsUnitsButtons = Array.from(event.target.parentElement.nextElementSibling.children);
+    const [ activeInputsUnitsButton ] = currentInputsUnitsButtons.filter( button => button.classList.contains('active'));
+    const activeUnit = activeInputsUnitsButton.dataset.value;
+    flexItemValue = activeUnit === 'auto' ? 'auto' : `${event.target.value}${activeUnit}`;
+  } else {
+    flexItemValue = event.target.value;
+  }
+
+  const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
+  const [ activeFlexItem ] = flexItems.filter(flexItem => flexItem.dataset.ordinal === event.target.dataset.ordinal);
+
+  console.log(activeFlexItem);
+
+  console.log(flexItemProperty);
+  console.log(flexItemValue);
+}))
