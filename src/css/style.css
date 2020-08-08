@@ -156,8 +156,8 @@ h6 {
   position: absolute;
   width: max-content;
   height: max-content;
-  top: -14px;
-  left: 14px;
+  top: -15px;
+  left: 15px;
   padding: 0 7px 0 5px;
   background-color: #cbd6dc;
   font-family: courier, monospace;
@@ -304,6 +304,22 @@ h6 {
   width: 50px;
 }
 
+.property-buttons {
+  width: 100%;
+}
+
+.flex-shrink-one {
+  width: 240px;
+}
+
+.flex-shrink-two {
+  width: 180px;
+}
+
+.flex-shrink-three {
+  width: 100px;
+}
+
 @media (min-width: 360px) and (max-width: 1024px) {
   code {
     font-size: 12px;
@@ -319,10 +335,10 @@ h6 {
 
   .property-buttons {
     display: flex;
-    margin-bottom: 10px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 10px;
   }
 }
 
