@@ -83,6 +83,11 @@ export default class DescriptionGenerator {
       20% - Размер элемента по умолчанию перед распределением оставшегося пространства будет 20% от ширины родителя.
       5rem - Размер элемента по умолчанию перед распределением оставшегося пространства будет 5 величин размере шрифта элемента html.
       `,
+      'auto': 'auto checked',
+      'px':'pixels checked',
+      '%': 'percents checked',
+      'mm': 'millimeters checked',
+      'pt': 'owww, what is pt means??)))'
     };
   }
 
@@ -109,7 +114,7 @@ export default class DescriptionGenerator {
       case 'flex-shrink':
         return [this.flexShrinkProperty.common];
       case 'flex-basis':
-        return [this.flexBasisProperty.common];
+        return [this.flexBasisProperty.common, this.flexBasisProperty[value]];
       default:
         return 'No descriptions...';
     }
