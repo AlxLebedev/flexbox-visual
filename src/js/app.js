@@ -78,13 +78,39 @@ const inputsUnitsButtons = document.querySelectorAll('.inputs-units-button')
 inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) => {
   const currentInputsUnitsButtons = Array.from(event.target.parentElement.querySelectorAll('.inputs-units-button'));
   drawUI.changeActivePropertyButton(currentInputsUnitsButtons, event.target);
+
+  let flexItemValue = event.target.parentElement.previousElementSibling.lastElementChild.value;
+  if (flexItemValue === '') {
+    return;
+  }
+
+  const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
+  const activeUnit = event.target.innerText;
+  const flexItemsElements = Array.from(event.target.closest('.container').lastElementChild.children);
+  const flexItemName = event.target.parentElement.previousElementSibling.lastElementChild.dataset.ordinal;
+  const [ activeFlexItemElement ] = flexItemsElements.filter( element => element.dataset.ordinal === flexItemName);
+
+  const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
+  const changableElementName = event.target.closest('.container').dataset.id;
+
+  flexItemValue = `${flexItemValue}${activeUnit}`;
+
+  drawUI.changePropertyOfElement(activeFlexItemElement, flexItemProperty, flexItemValue);
+  drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
+  console.log(flexItemProperty);
+  console.log(flexItemValue);
+  console.log(activeUnit);
+  console.log(activeFlexItemElement);
+
+  
+  
 }));
 
 const inputsFields = document.querySelectorAll('.inputs__field');
 
 inputsFields.forEach( input => input.value = '');
 
-inputsFields.forEach((input) => input.addEventListener('change', (event) => {
+inputsFields.forEach((input) => input.addEventListener('input', (event) => {
   if(event.target.value === '') {
     return;
   }
@@ -111,8 +137,4 @@ inputsFields.forEach((input) => input.addEventListener('change', (event) => {
   drawUI.changePropertyOfElement(activeFlexItem, flexItemProperty, flexItemValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
-
-  // console.log(flexItemProperty);
-  // console.log(flexItemValue);
-  // console.log(activeFlexItem);
 }))

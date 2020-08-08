@@ -175,6 +175,7 @@ h6 {
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 5px;
+  transition: 0.5s;
 }
 
 .flex-item:nth-child(1) {
