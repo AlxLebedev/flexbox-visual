@@ -198,7 +198,7 @@
         <div class="container visual" data-id="item">
           <div class="buttons">
             <div class="items-buttons">
-              <div class="select-item-button">1</div>
+              <div class="select-item-button active">1</div>
               <div class="select-item-button">2</div>
               <div class="select-item-button">3</div>
             </div>
@@ -212,9 +212,9 @@
             </div>
           </div>
           <div class="flex-items" data-prop="align-self">
-            <div class="flex-item one">1</div>
-            <div class="flex-item two">2</div>
-            <div class="flex-item three">3</div>
+            <div class="flex-item one" data-value="auto">1</div>
+            <div class="flex-item two" data-value="auto">2</div>
+            <div class="flex-item three" data-value="auto">3</div>
           </div>
         </div>
         <div class="container description">
@@ -231,23 +231,24 @@
         <div class="container visual" data-id="item">
           <div class="buttons">
             <div class="items-buttons">
-              <div class="select-item-button">1</div>
+              <div class="select-item-button active">1</div>
               <div class="select-item-button">2</div>
               <div class="select-item-button">3</div>
               <div class="select-item-button">4</div>
             </div>
             <div class="property-buttons">
-              <div class="button property-item-button active" data-value="1">Order 1</div>
+              <div class="button property-item-button active" data-value="0">Order 0</div>
+              <div class="button property-item-button" data-value="1">Order 1</div>
               <div class="button property-item-button" data-value="2">Order 2</div>
               <div class="button property-item-button" data-value="3">Order 3</div>
               <div class="button property-item-button" data-value="4">Order 4</div>
             </div>
           </div>
           <div class="flex-items" data-prop="order">
-            <div class="flex-item one">1</div>
-            <div class="flex-item two">2</div>
-            <div class="flex-item three">3</div>
-            <div class="flex-item three">4</div>
+            <div class="flex-item one" data-value="0">1</div>
+            <div class="flex-item two" data-value="0">2</div>
+            <div class="flex-item three" data-value="0">3</div>
+            <div class="flex-item three" data-value="0">4</div>
           </div>
         </div>
         <div class="container description">
@@ -262,22 +263,27 @@
       <h3 class="property-title">Flex-grow property</h3>
       <div class="wrapper">
         <div class="container visual" data-id="item">
-          <div class="buttons">
-            <div class="items-buttons">
-              <div class="select-item-button">1</div>
-              <div class="select-item-button">2</div>
-              <div class="select-item-button">3</div>
-            </div>
-            <div class="property-buttons">
-              <div class="button property-item-button active" data-value="0">Flex-grow 0</div>
-              <div class="button property-item-button" data-value="1">Flex-grow 1</div>
-              <div class="button property-item-button" data-value="2">Flex-grow 2</div>
-            </div>
-          </div>
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number">
+              </div>
+            </li>
+          </ul>
           <div class="flex-items" data-prop="flex-grow">
-            <div class="flex-item one">1</div>
-            <div class="flex-item two">2</div>
-            <div class="flex-item three">3</div>
+            <div class="flex-item one" data-ordinal="one">1</div>
+            <div class="flex-item two" data-ordinal="two">2</div>
+            <div class="flex-item three" data-ordinal="three">3</div>
           </div>
         </div>
         <div class="container description">
@@ -292,22 +298,27 @@
       <h3 class="property-title">Flex-shrink property</h3>
       <div class="wrapper">
         <div class="container visual" data-id="item">
-          <div class="buttons">
-            <div class="items-buttons">
-              <div class="select-item-button">1</div>
-              <div class="select-item-button">2</div>
-              <div class="select-item-button">3</div>
-            </div>
-            <div class="property-buttons">
-              <div class="button property-item-button active" data-value="0">Flex-shrink 0</div>
-              <div class="button property-item-button" data-value="1">Flex-shrink 1</div>
-              <div class="button property-item-button" data-value="2">Flex-shrink 2</div>
-            </div>
-          </div>
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number">
+              </div>
+            </li>
+          </ul>
           <div class="flex-items" data-prop="flex-shrink">
-            <div class="flex-item one">1</div>
-            <div class="flex-item two">2</div>
-            <div class="flex-item three">3</div>
+            <div class="flex-item one flex-shrink-one" data-ordinal="one">1</div>
+            <div class="flex-item two flex-shrink-two" data-ordinal="two">2</div>
+            <div class="flex-item three flex-shrink-three" data-ordinal="three">3</div>
           </div>
         </div>
         <div class="container description">
@@ -322,22 +333,48 @@
       <h3 class="property-title">Flex-basis property</h3>
       <div class="wrapper">
         <div class="container visual" data-id="item">
-          <div class="buttons">
-            <div class="items-buttons">
-              <div class="select-item-button">1</div>
-              <div class="select-item-button">2</div>
-              <div class="select-item-button">3</div>
-            </div>
-            <div class="property-buttons">
-              <div class="button property-item-button active" data-value="0">Flex-basis 0</div>
-              <div class="button property-item-button" data-value="20%">Flex-basis 20%</div>
-              <div class="button property-item-button" data-value="5rem">Flex-basis 5 rem</div>
-            </div>
-          </div>
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number">
+              </div>
+              <div class="inputs-units-buttons">
+                <div class="button inputs-units-button active" data-value="auto">auto</div>
+                <div class="button inputs-units-button" data-value="px">px</div>
+                <div class="button inputs-units-button" data-value="%">%</div>
+                <div class="button inputs-units-button" data-value="mm">mm</div>
+                <div class="button inputs-units-button" data-value="pt">pt</div>
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number">
+              </div>
+              <div class="inputs-units-buttons">
+                <div class="button inputs-units-button active" data-value="auto">auto</div>
+                <div class="button inputs-units-button" data-value="px">px</div>
+                <div class="button inputs-units-button" data-value="%">%</div>
+                <div class="button inputs-units-button" data-value="mm">mm</div>
+                <div class="button inputs-units-button" data-value="pt">pt</div>
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number">
+              </div>
+              <div class="inputs-units-buttons">
+                <div class="button inputs-units-button active" data-value="auto">auto</div>
+                <div class="button inputs-units-button" data-value="px">px</div>
+                <div class="button inputs-units-button" data-value="%">%</div>
+                <div class="button inputs-units-button" data-value="mm">mm</div>
+                <div class="button inputs-units-button" data-value="pt">pt</div>
+              </div>
+            </li>
+          </ul>
           <div class="flex-items" data-prop="flex-basis">
-            <div class="flex-item one">1</div>
-            <div class="flex-item two">2</div>
-            <div class="flex-item three">3</div>
+            <div class="flex-item one" data-ordinal="one">1</div>
+            <div class="flex-item two" data-ordinal="two">2</div>
+            <div class="flex-item three" data-ordinal="three">3</div>
           </div>
         </div>
         <div class="container description">

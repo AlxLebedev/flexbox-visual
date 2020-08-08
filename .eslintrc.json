@@ -20,6 +20,9 @@
       "WithStatement"
     ],
     "no-console": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "max-len": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off"
   }
 }

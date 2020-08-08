@@ -16,8 +16,8 @@ export default class DrawUI {
     this.descriptionElement = descriptionElement;
     const [commonText, propertyValueText] = descriptionText;
     const htmlMarkup = `
-    <p class = "description-block">${commonText}</p>
-    <p class = "description-block">${propertyValueText}</p>`;
+    <p class = "description-block description-block-common">${commonText}</p>
+    <p class = "description-block">${propertyValueText === undefined ? '' : propertyValueText}</p>`;
     this.descriptionElement.innerHTML = htmlMarkup;
   }
 
