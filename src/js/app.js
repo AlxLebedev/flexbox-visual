@@ -28,14 +28,14 @@ allFlexItemsSelectionButtons.forEach((button) => button.addEventListener('click'
   const currentFlexItemsSelectionButtons = Array.from(event.target.closest('.items-buttons').children);
   const propertiesButtons = Array.from(event.target.parentElement.nextElementSibling.children);
   const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
-  const [ selectedFlexItem ] = flexItems.filter( item => item.innerText === event.target.innerText);
-  const [ propertyButtonOfSelectedFlexItem ] = propertiesButtons.filter( button => button.dataset.value === selectedFlexItem.dataset.value);
+  const [selectedFlexItem] = flexItems.filter((item) => item.innerText === event.target.innerText);
+  const [propertyButtonOfSelectedFlexItem] = propertiesButtons.filter((propertiesButton) => propertiesButton.dataset.value === selectedFlexItem.dataset.value);
   const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
   const flexItemValue = selectedFlexItem.dataset.value;
-  
+
   const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   const descriptionText = descriprionGenerator.getDescription(flexItemProperty, flexItemValue);
- 
+
   const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
   const changableElementName = event.target.closest('.container').dataset.id;
 
@@ -60,7 +60,7 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
 
   // определяем itemFlexElement по признаку 'active' и устанавливаем ему data-value такой же как у кнопки
   const currentFlexItemsSelectionButtons = Array.from(event.target.closest('.container').firstElementChild.firstElementChild.children);
-  const [ activeFlexItemsSelectionButton ] = currentFlexItemsSelectionButtons.filter( element => element.classList.contains('active'));
+  const [activeFlexItemsSelectionButton] = currentFlexItemsSelectionButtons.filter((element) => element.classList.contains('active'));
   const activeFlexItemIndex = +(activeFlexItemsSelectionButton.innerText) - 1;
   const flexItemsElements = event.target.closest('.container').lastElementChild.children;
   const itemFlexElement = flexItemsElements[activeFlexItemIndex];
@@ -73,7 +73,7 @@ changeFlexItemPropertyButtons.forEach((button) => button.addEventListener('click
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
 
-const inputsUnitsButtons = document.querySelectorAll('.inputs-units-button')
+const inputsUnitsButtons = document.querySelectorAll('.inputs-units-button');
 
 inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) => {
   const currentInputsUnitsButtons = Array.from(event.target.parentElement.querySelectorAll('.inputs-units-button'));
@@ -83,7 +83,7 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
   const activeUnit = event.target.innerText;
   const flexItemsElements = Array.from(event.target.closest('.container').lastElementChild.children);
   const flexItemName = event.target.parentElement.previousElementSibling.lastElementChild.dataset.ordinal;
-  const [ activeFlexItemElement ] = flexItemsElements.filter( element => element.dataset.ordinal === flexItemName);
+  const [activeFlexItemElement] = flexItemsElements.filter((element) => element.dataset.ordinal === flexItemName);
 
   const exampleCssField = event.target.closest('.container').nextElementSibling.lastElementChild;
   const changableElementName = event.target.closest('.container').dataset.id;
@@ -99,7 +99,7 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
   flexItemValue = `${flexItemValue}${activeUnit}`;
 
   if (activeUnit === 'auto') {
-    flexItemValue = 'auto'
+    flexItemValue = 'auto';
   }
 
   drawUI.changePropertyOfElement(activeFlexItemElement, flexItemProperty, flexItemValue);
@@ -109,10 +109,10 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
 
 const inputsFields = document.querySelectorAll('.inputs__field');
 
-inputsFields.forEach( input => input.value = '');
+inputsFields.forEach((input) => input.value = '');
 
 inputsFields.forEach((input) => input.addEventListener('input', (event) => {
-  if(event.target.value === '') {
+  if (event.target.value === '') {
     return;
   }
   const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
@@ -121,7 +121,7 @@ inputsFields.forEach((input) => input.addEventListener('input', (event) => {
 
   if (event.target.parentElement.nextElementSibling) {
     const currentInputsUnitsButtons = Array.from(event.target.parentElement.nextElementSibling.children);
-    const [ activeInputsUnitsButton ] = currentInputsUnitsButtons.filter( button => button.classList.contains('active'));
+    const [activeInputsUnitsButton] = currentInputsUnitsButtons.filter((button) => button.classList.contains('active'));
     activeUnit = activeInputsUnitsButton.dataset.value;
     flexItemValue = activeUnit === 'auto' ? 'auto' : `${event.target.value}${activeUnit}`;
   } else {
@@ -129,7 +129,7 @@ inputsFields.forEach((input) => input.addEventListener('input', (event) => {
   }
 
   const flexItems = Array.from(event.target.closest('.container').lastElementChild.children);
-  const [ activeFlexItem ] = flexItems.filter(flexItem => flexItem.dataset.ordinal === event.target.dataset.ordinal);
+  const [activeFlexItem] = flexItems.filter((flexItem) => flexItem.dataset.ordinal === event.target.dataset.ordinal);
 
   const descriptionElement = event.target.closest('.container').nextElementSibling.firstElementChild;
   const descriptionText = descriprionGenerator.getDescription(flexItemProperty, activeUnit);
@@ -139,4 +139,4 @@ inputsFields.forEach((input) => input.addEventListener('input', (event) => {
   drawUI.changePropertyOfElement(activeFlexItem, flexItemProperty, flexItemValue);
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
-}))
+}));

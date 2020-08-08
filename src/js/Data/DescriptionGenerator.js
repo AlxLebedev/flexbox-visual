@@ -68,7 +68,7 @@ export default class DescriptionGenerator {
       Ноль - это значение по умолчанию.
       Если для всех элементов flex-grow установлено значение 1, оставшееся пространство в контейнере будет равномерно распределено между всеми дочерними элементами.
       Если один из дочерних элементов имеет значение 2, этот элемент займет в два раза больше места, чем остальные (или попытается, по крайней мере).
-      `
+      `,
     };
     this.flexShrinkProperty = {
       common: `
@@ -83,11 +83,11 @@ export default class DescriptionGenerator {
       20% - Размер элемента по умолчанию перед распределением оставшегося пространства будет 20% от ширины родителя.
       5rem - Размер элемента по умолчанию перед распределением оставшегося пространства будет 5 величин размере шрифта элемента html.
       `,
-      'auto': 'auto checked',
-      'px':'pixels checked',
+      auto: 'auto checked',
+      px: 'pixels checked',
       '%': 'percents checked',
-      'mm': 'millimeters checked',
-      'pt': 'owww, what is pt means??)))'
+      mm: 'millimeters checked',
+      pt: 'owww, what is pt means??)))',
     };
   }
 
