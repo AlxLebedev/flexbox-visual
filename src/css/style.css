@@ -88,7 +88,7 @@ h6 {
 }
 
 .visual {
-  max-width: 320px;
+  width: 320px;
 }
 
 .buttons {
@@ -359,7 +359,7 @@ h6 {
   }
 
   .visual {
-    width: 320px;
+    width: 50%;
     flex-shrink: 0;
     margin-right: 10px;
   }
@@ -370,6 +370,7 @@ h6 {
 
   .property-buttons {
     display: flex;
+    width: 79%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -378,5 +379,29 @@ h6 {
   .wrapper {
     flex-direction: row;
     align-items: initial;
+  }
+
+  .inputs {
+    flex-direction: row;
+  }
+
+  .flex-items {
+    width: 490px;
+  }
+
+  .flex-item {
+    width: 80px;
+  }
+
+  .flex-shrink-one {
+    width: 340px;
+  }
+  
+  .flex-shrink-two {
+    width: 280px;
+  }
+  
+  .flex-shrink-three {
+    width: 200px;
   }
 }
