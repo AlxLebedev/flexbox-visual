@@ -34,6 +34,9 @@ h1 {
 h2 {
   font-size: 20px;
   padding-bottom: 10px;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
   border-bottom: 5px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, rgb(204, 93, 120), rgba(204, 93, 120, 0.50));
@@ -53,6 +56,15 @@ h5 {
 
 h6 {
   font-size: 16px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .separator {
@@ -287,8 +299,6 @@ h6 {
 }
 
 .inputs__field {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
   box-shadow: none;
   outline: none;
   border: none;

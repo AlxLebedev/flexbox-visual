@@ -109,7 +109,7 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
 
 const inputsFields = document.querySelectorAll('.inputs__field');
 
-inputsFields.forEach((input) => input.value = '');
+// inputsFields.forEach((input) => input.value = '');
 
 inputsFields.forEach((input) => input.addEventListener('input', (event) => {
   if (event.target.value === '') {
