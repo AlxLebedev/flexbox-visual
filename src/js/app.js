@@ -113,7 +113,9 @@ const inputsFields = document.querySelectorAll('.inputs__field');
 // inputsFields.forEach((input) => input.value = '');
 
 inputsFields.forEach((input) => input.addEventListener('input', (event) => {
+  input.closest('.inputs__container').querySelector('.inputs__text').classList.remove('error');
   if (!validator(input.value)) {
+    input.closest('.inputs__container').querySelector('.inputs__text').classList.add('error');
     input.value = '';
     return;
   }
