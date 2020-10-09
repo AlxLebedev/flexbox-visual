@@ -1,5 +1,6 @@
 import DrawUI from './UI/DrawUI';
 import DescriptionGenerator from './Data/DescriptionGenerator';
+import validator from './utils/validator'
 
 const drawUI = new DrawUI();
 const descriprionGenerator = new DescriptionGenerator();
@@ -112,7 +113,8 @@ const inputsFields = document.querySelectorAll('.inputs__field');
 // inputsFields.forEach((input) => input.value = '');
 
 inputsFields.forEach((input) => input.addEventListener('input', (event) => {
-  if (event.target.value === '') {
+  if (!validator(input.value)) {
+    input.value = '';
     return;
   }
   const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
