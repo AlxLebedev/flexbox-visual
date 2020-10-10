@@ -1,5 +1,6 @@
 import DrawUI from './UI/DrawUI';
 import DescriptionGenerator from './Data/DescriptionGenerator';
+import validator from './utils/validator';
 
 const drawUI = new DrawUI();
 const descriprionGenerator = new DescriptionGenerator();
@@ -109,10 +110,14 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
 
 const inputsFields = document.querySelectorAll('.inputs__field');
 
-// inputsFields.forEach((input) => input.value = '');
-
-inputsFields.forEach((input) => input.addEventListener('input', (event) => {
-  if (event.target.value === '') {
+inputsFields.forEach((input) => input.addEventListener('keyup', (event) => {
+  input.closest('.inputs__container').querySelector('.inputs__text').classList.remove('error');
+  if (input.value.length > 1 && input.value[0] === '0') {
+    input.value = input.value.slice(1);
+  }
+  if (!validator(input.value) && event.key !== 'Backspace' && event.key !== 'Delete') {
+    input.closest('.inputs__container').querySelector('.inputs__text').classList.add('error');
+    input.value = '';
     return;
   }
   const flexItemProperty = event.target.closest('.container').lastElementChild.dataset.prop;
