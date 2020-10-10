@@ -1,6 +1,6 @@
 import DrawUI from './UI/DrawUI';
 import DescriptionGenerator from './Data/DescriptionGenerator';
-import validator from './utils/validator'
+import validator from './utils/validator';
 
 const drawUI = new DrawUI();
 const descriprionGenerator = new DescriptionGenerator();
