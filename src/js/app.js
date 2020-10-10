@@ -145,3 +145,7 @@ inputsFields.forEach((input) => input.addEventListener('keyup', (event) => {
   drawUI.changePropretyDescription(descriptionElement, descriptionText);
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
+
+inputsFields.forEach(input => input.addEventListener('focus', () => {
+  input.select();
+}))
