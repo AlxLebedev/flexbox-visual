@@ -146,6 +146,6 @@ inputsFields.forEach((input) => input.addEventListener('keyup', (event) => {
   drawUI.changeExampleCSS(exampleCssField, changableElementName, flexItemProperty, flexItemValue);
 }));
 
-inputsFields.forEach(input => input.addEventListener('focus', () => {
+inputsFields.forEach((input) => input.addEventListener('focus', () => {
   input.select();
-}))
+}));
