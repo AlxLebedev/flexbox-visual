@@ -304,11 +304,12 @@ input[type="number"] {
   content: 'Только целое число';
   top: 37px;
   left: 0;
-  width: 138px;
+  width: 139px;
   padding: 2px 5px;
   border-radius: 5px;
   color: #ffffff;
-  background-color: tomato;
+  font-weight: 700;
+  background-color: #fd0000;
   opacity: 0;
   transition: opacity .3s;
 }

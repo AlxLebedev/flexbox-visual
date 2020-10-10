@@ -110,11 +110,12 @@ inputsUnitsButtons.forEach((button) => button.addEventListener('click', (event) 
 
 const inputsFields = document.querySelectorAll('.inputs__field');
 
-// inputsFields.forEach((input) => input.value = '');
-
-inputsFields.forEach((input) => input.addEventListener('input', (event) => {
+inputsFields.forEach((input) => input.addEventListener('keyup', (event) => {
   input.closest('.inputs__container').querySelector('.inputs__text').classList.remove('error');
-  if (!validator(input.value)) {
+  if (input.value.length > 1 && input.value[0] === '0') {
+    input.value = input.value.slice(1);
+  }
+  if (!validator(input.value) && event.key !== 'Backspace' && event.key !== 'Delete') {
     input.closest('.inputs__container').querySelector('.inputs__text').classList.add('error');
     input.value = '';
     return;
