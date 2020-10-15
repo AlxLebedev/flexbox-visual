@@ -129,6 +129,7 @@ input[type="number"] {
   background-color: transparent;
   border: 1px solid #cbd6dc;
   font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
   color: #ffffff;
@@ -145,6 +146,7 @@ input[type="number"] {
   border-radius: 10px;
   background-color: transparent;
   border: 1px solid #cbd6dc;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
   color: #ffffff;
@@ -301,11 +303,11 @@ input[type="number"] {
 
 .inputs__text::before {
   position: absolute;
-  content: 'Только целое число';
+  content: 'Только натуральное число';
   top: 37px;
   left: 0;
-  width: 139px;
-  padding: 2px 5px;
+  width: 186px;
+  padding: 1px 5px;
   border-radius: 5px;
   color: #ffffff;
   font-weight: 700;
