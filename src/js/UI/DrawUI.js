@@ -13,12 +13,15 @@ export default class DrawUI {
   }
 
   changePropretyDescription(descriptionElement, descriptionText) {
+    if (!descriptionText) return;
     this.descriptionElement = descriptionElement;
-    const [commonText, propertyValueText] = descriptionText;
     const htmlMarkup = `
-    <p class = "description-block description-block-common">${commonText}</p>
-    <p class = "description-block">${propertyValueText === undefined ? '' : propertyValueText}</p>`;
-    this.descriptionElement.innerHTML = htmlMarkup;
+    <p class = "description-block">${descriptionText === undefined ? '' : descriptionText}</p>`;
+    const existedExplanation = descriptionElement.querySelector('.description-block');
+    if (existedExplanation) {
+      existedExplanation.remove();
+    }
+    this.descriptionElement.insertAdjacentHTML('beforeend', htmlMarkup);
   }
 
   changeExampleCSS(exampleCssField, changableElementName, property, propertyValue) {
