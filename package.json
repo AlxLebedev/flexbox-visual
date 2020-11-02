@@ -13,7 +13,9 @@
     "show:dist": "live-server dist"
   },
   "dependencies": {
-    "core-js": "3"
+    "core-js": "3",
+    "svg-sprite-loader": "^5.0.0",
+    "svgo-loader": "^2.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -10,6 +10,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
+    new SpriteLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
@@ -17,12 +18,7 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
       favicon: './src/img/favicon.ico',
-    }),
-    new CopyWebpackPlugin([
-      {
-        from: './src/img/', to: 'img/',
-      }
-    ]),
+    })
   ],
   devServer: {
     overlay: true,
@@ -51,15 +47,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png)$/,
+        test: /\.svg$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: 'img/[name].[ext]',
-            },
-          },
+          'svg-sprite-loader',
+          'svgo-loader',
         ],
       },
     ],

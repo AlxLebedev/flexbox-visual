@@ -1,3 +1,6 @@
+import '../img/github.svg';
+import '../img/netology.svg';
+
 import DrawUI from './UI/DrawUI';
 import DescriptionGenerator from './Data/DescriptionGenerator';
 import validator from './utils/validator';

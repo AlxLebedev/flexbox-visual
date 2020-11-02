@@ -382,14 +382,38 @@ input[type="number"] {
 }
 
 .link {
-  width: max-content;
-  margin-bottom: 20px;
   color: #ffffff;
   text-decoration: none;
 }
 
+.link:hover {
+  opacity: .6;
+}
+
+.link svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.links .link {
+  display: flex;
+  width: max-content;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.links .link svg {
+  margin-right: 10px;
+}
+
 .copyright {
   text-align: right;
+  margin-bottom: 5px;
+}
+
+.copyright svg {
+  margin-bottom: -5px;
 }
 
 @media (min-width: 360px) and (max-width: 1023px) {
