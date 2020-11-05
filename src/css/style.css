@@ -164,6 +164,17 @@ input[type="number"] {
   color: #ffffff;
 }
 
+button:focus, .select-item-button:focus {
+  outline: none;
+  border: 1px solid #cc5d78;
+  border-radius: 10px;
+}
+
+button:focus:not(:focus-visible), .select-item-button:focus:not(:focus-visible) {
+  outline: none;
+  border: none;
+}
+
 .active {
   border-color: #f3f3f3;
   background-color: #f3f3f3;
