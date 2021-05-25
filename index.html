@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox visualization</title>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(79534519, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/79534519" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+<link rel="shortcut icon" href="favicon.ico"><link href="main.css" rel="stylesheet"></head>
+<body>
+  <header>
+    <h1 class="main-title" id="main-title">Flexbox visualization</h1>
+  </header>
+  <main class="app-container">
+    <section class="separator">
+      <h2>Свойства, применяемые к&nbsp;родительскому элементу&nbsp;&mdash; контейнеру</h2>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство display</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="block">block</button>
+              <button class="button flex-container-button" data-value="flex">flex</button>
+            </div>
+          </div>
+          <div class="flex-items block" data-prop="display">
+            <div class="flex-item one">1</div>
+            <div class="flex-item two">2</div>
+            <div class="flex-item three">3</div>
+            <div class="flex-item four">4</div>
+            <div class="flex-item five">5</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Свойство <code>display</code> является многоцелевым свойством, определяющим как элемент будет отрисован на&nbsp;странице или как его дочерние элементы будут располагаться внутри.</p>
+            <p>В&nbsp;данном случае, мы&nbsp;имеем дело со&nbsp;вторым случаем&nbsp;&mdash; значение <code>flex</code> влияет на&nbsp;расположение дочерних элементов. Свойство применяется к&nbsp;контейнеру, в&nbsp;котором располагаются элементы и&nbsp;влияет именно на&nbsp;отображение элементов внутри контейнера.</p>
+            <p>Существует много различных значений свойства <code>display</code>, сейчас мы&nbsp;рассмотрим только <code>flex</code> и <code>block</code>.</p></div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство flex-direction</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="row">row</button>
+              <button class="button flex-container-button" data-value="column">column</button>
+              <button class="button flex-container-button" data-value="row-reverse">row-reverse</button>
+              <button class="button flex-container-button" data-value="column-reverse">column-reverse</button>
+            </div>
+          </div>
+          <div class="flex-items" data-prop="flex-direction">
+            <div class="flex-item one">1</div>
+            <div class="flex-item two">2</div>
+            <div class="flex-item three">3</div>
+            <div class="flex-item four">4</div>
+            <div class="flex-item five">5</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Свойство применяется исключительно к&nbsp;флекс-контейнеру и&nbsp;задаёт направление основной оси в&nbsp;этом контейнере, а&nbsp;также направление вдоль этой оси (<code>nomal</code> или <code>reverse</code>), тем самым определяет как флекс-элементы располагаются в&nbsp;контейнере.</p>
+            <p><strong>Oсновная ось</strong>: основная направляющая флекс-контейнера, вдоль которой располагаются флекс-элементы. По&nbsp;умолчанию, если не&nbsp;заданы другие параметры, ось проходит слева направо.</p>
+            <p><strong>Дополнительная</strong> (побочная, перпендикулярная) ось: ось, идущая перпендикулярно основной. Если параметры основной оси не&nbsp;изменены, то&nbsp;дополнительная ось пройдет в&nbsp;направлении сверу вниз.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство flex-wrap</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="nowrap">nowrap</button>
+              <button class="button flex-container-button" data-value="wrap">wrap</button>
+              <button class="button flex-container-button" data-value="wrap-reverse">wrap-reverse</button>
+            </div>
+          </div>
+          <div class="flex-items" data-prop="flex-wrap">
+            <div class="flex-item one">1</div>
+            <div class="flex-item two">2</div>
+            <div class="flex-item three">3</div>
+            <div class="flex-item four">4</div>
+            <div class="flex-item five">5</div>
+            <div class="flex-item six">6</div>
+            <div class="flex-item seven">7</div>
+            <div class="flex-item eight">8</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Свойство применяется к&nbsp;флекс-контейнеру и&nbsp;задаёт возможность переноса флекс-элементов на&nbsp;новую строку, если они не&nbsp;помещаются в&nbsp;рамках флекс-контейнера. По&nbsp;умолчанию флекс-элементы выстраиваются в&nbsp;ряд и&nbsp;стараются уместиться в&nbsp;контейнере &laquo;ужимая&raquo; свою ширину.</p>
+            <p>В&nbsp;данном примере специально в&nbsp;контейнер помещено много флекс-элементов с&nbsp;фиксированной шириной&nbsp;и, как видим, при значении <code>nowrap</code> флекс элементы пытаются ужаться и&nbsp;втиснуться в&nbsp;контейнер.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство justify-content</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="flex-start">flex-start</button>
+              <button class="button flex-container-button" data-value="flex-end">flex-end</button>
+              <button class="button flex-container-button" data-value="center">center</button>
+              <button class="button flex-container-button" data-value="space-between">space-between</button>
+              <button class="button flex-container-button" data-value="space-around">space-around</button>
+              <button class="button flex-container-button" data-value="space-evenly">space-evenly</button>
+            </div>
+          </div>
+          <div class="flex-items" data-prop="justify-content">
+            <div class="flex-item one">1</div>
+            <div class="flex-item two">2</div>
+            <div class="flex-item three">3</div>
+            <div class="flex-item four">4</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Свойство применяется к&nbsp;флекс-контейнеру и&nbsp;определяет как браузер распределяет свободное пространство внутри флекс-контейнера вдоль основной оси.</p>
+            <p>Данное свойство работает, если внутри флекс-контейнера имеется свободное пространство.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство align-items</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="stretch">stretch</button>
+              <button class="button flex-container-button" data-value="flex-start">flex-start</button>
+              <button class="button flex-container-button" data-value="flex-end">flex-end</button>
+              <button class="button flex-container-button" data-value="center">center</button>
+              <button class="button flex-container-button" data-value="baseline">baseline</button>
+            </div>
+          </div>
+          <div class="flex-items align-items-stretch" data-prop="align-items">
+            <div class="flex-item one align-items">1</div>
+            <div class="flex-item two align-items">2</div>
+            <div class="flex-item three align-items">3</div>
+            <div class="flex-item four align-items">4</div>
+            <div class="flex-item five align-items">5</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Это свойство определяет как флекс-элементы располагаются вдоль поперечной оси внутри флекс-контейнера.</p>
+            <p><strong>Oсновная ось</strong>: основная направляющая флекс-контейнера, вдоль которой располагаются флекс-элементы. По&nbsp;умолчанию, если не&nbsp;заданы другие параметры, ось проходит слева направо.</p>
+            <p><strong>Дополнительная</strong> (побочная, перпендикулярная) ось: ось, идущая перпендикулярно основной. Если параметры основной оси не&nbsp;изменены, то&nbsp;дополнительная ось пройдет в&nbsp;направлении сверу вниз. Можно вообразить, что свойство <code>align-items</code> это версия <code>justify-content</code> для дополнительной оси (перпендикулярной основной).</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство align-content</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="container">
+          <div class="buttons">
+            <div class="property-buttons">
+              <button class="button flex-container-button active" data-value="stretch">stretch</button>
+              <button class="button flex-container-button" data-value="flex-start">flex-start</button>
+              <button class="button flex-container-button" data-value="flex-end">flex-end</button>
+              <button class="button flex-container-button" data-value="center">center</button>
+              <button class="button flex-container-button" data-value="space-between">space-between</button>
+              <button class="button flex-container-button" data-value="space-around">space-around</button>
+              <button class="button flex-container-button" data-value="space-evenly">space-evenly</button>
+            </div>
+          </div>
+          <div class="flex-items wrap align-content-stretch align-items-stretch" data-prop="align-content">
+            <div class="flex-item one">1</div>
+            <div class="flex-item two">2</div>
+            <div class="flex-item three">3</div>
+            <div class="flex-item four">4</div>
+            <div class="flex-item five">5</div>
+            <div class="flex-item six">6</div>
+            <div class="flex-item seven">7</div>
+            <div class="flex-item eight">8</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Это свойство выравнивает строки флекс-элементов в&nbsp;пределах флекс-контейнера, когда есть дополнительное пространство на&nbsp;поперечной оси, подобно тому, как <code>justify-content</code> выравнивает отдельные элементы в&nbsp;пределах основной оси.</p>
+            <p>Свойство не&nbsp;действует, когда есть только одна строка флекс-элементов по&nbsp;причине того, что для выравнивания строк их&nbsp;необходимо как минимум две.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="separator">
+      <h2>Свойства, применяемые ко флекс-элементу</h2>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство align-self</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="item">
+          <div class="buttons">
+            <div class="items-buttons">
+              <button class="select-item-button active">1</button>
+              <button class="select-item-button">2</button>
+              <button class="select-item-button">3</button>
+            </div>
+            <div class="property-buttons">
+              <button class="button property-item-button active" data-value="auto">auto</button>
+              <button class="button property-item-button" data-value="flex-start">flex-start</button>
+              <button class="button property-item-button" data-value="flex-end">flex-end</button>
+              <button class="button property-item-button" data-value="center">center</button>
+              <button class="button property-item-button" data-value="baseline">baseline</button>
+              <button class="button property-item-button" data-value="stretch">stretch</button>
+            </div>
+          </div>
+          <div class="flex-items" data-prop="align-self">
+            <div class="flex-item one" data-value="auto">1</div>
+            <div class="flex-item two" data-value="auto">2</div>
+            <div class="flex-item three" data-value="auto">3</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Свойство выравнивает выбраный флекс-элемент&nbsp;&mdash; позволяет переопределить выравнивание по&nbsp;умолчанию (или указанное с&nbsp;помощью <code>align-items</code>) для отдельных флекс-элементов.</p>
+            <p>Значения свойств одинаковы со&nbsp;свойством <code>align-items</code>, разница лишь в&nbsp;том, что <code>align-self</code> влияет на&nbsp;конкретный флекс-элемент, в&nbsp;то&nbsp;время как свойство <code>align-items</code> применяется к&nbsp;флекс-контейнеру и&nbsp;распространяет свое действие на&nbsp;все флекс-элементы внутри него.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство order</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="item">
+          <div class="buttons">
+            <div class="items-buttons">
+              <button class="select-item-button active">1</button>
+              <button class="select-item-button">2</button>
+              <button class="select-item-button">3</button>
+              <button class="select-item-button">4</button>
+            </div>
+            <div class="property-buttons">
+              <button class="button property-item-button active" data-value="0">Order 0</button>
+              <button class="button property-item-button" data-value="1">Order 1</button>
+              <button class="button property-item-button" data-value="2">Order 2</button>
+              <button class="button property-item-button" data-value="3">Order 3</button>
+              <button class="button property-item-button" data-value="4">Order 4</button>
+            </div>
+          </div>
+          <div class="flex-items" data-prop="order">
+            <div class="flex-item one" data-value="0">1</div>
+            <div class="flex-item two" data-value="0">2</div>
+            <div class="flex-item three" data-value="0">3</div>
+            <div class="flex-item three" data-value="0">4</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>По&nbsp;умолчанию <code>flex</code> элементы располагаются в&nbsp;исходном порядке, согласно порядку в&nbsp;разметке документа. Однако свойство <code>order</code> может этот порядок изменить. Оно определяет порядок появления выбранного флекс-элемента во&nbsp;флекс-контейнере.</p>
+            <p>Элементы располагаются в&nbsp;восходящем порядке по&nbsp;значению свойства <code>order</code>: чем выше значение, тем правее встает элемент по&nbsp;отношению к&nbsp;другим элементам с&nbsp;более низким значением <code>order</code>. Если у&nbsp;нескольких элементов значение <code>order</code> одинаково, то&nbsp;они располагатся согласно порядку в&nbsp;разметке документа.</p>
+            <p>Важно отметить, что свойство <code>order</code> переставляет элементы лишь визуально, не&nbsp;нарушая изначальный порядок разметки документа.</p>
+            <p>По&nbsp;умолчанию значение <code>order</code> равняется&nbsp;0.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство flex-grow</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="item">
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number" min="0" autocomplete="off" value="0">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number" min="0" autocomplete="off" value="0">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number" min="0" autocomplete="off" value="0">
+              </div>
+            </li>
+          </ul>
+          <div class="flex-items" data-prop="flex-grow">
+            <div class="flex-item one" data-ordinal="one">1</div>
+            <div class="flex-item two" data-ordinal="two">2</div>
+            <div class="flex-item three" data-ordinal="three">3</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Это свойство определяет способность флекс-элемента растягиваться в&nbsp;случае необходимости. Оно принимает значения в&nbsp;виде целых положительных чисел, которое служит пропорцией&nbsp;&mdash; какое количество доступного пространства внутри гибкого контейнера должен занимать элемент.</p>
+            <p>По&nbsp;умолчанию значение равно 0&nbsp;&mdash; элементы не&nbsp;растягиваются и&nbsp;не&nbsp;занимают свободное пространство.</p>
+            <p>Если одному элементу задать значение&nbsp;1, то&nbsp;он&nbsp;займет все доступное свободное пространство при условии, что у&nbsp;остальных злементов значение свойства <code>flex-grow</code> равняетя 0.</p>
+            <p>Если для всех элементов <code>flex-grow</code> установлено значение&nbsp;1, оставшееся пространство в&nbsp;контейнере будет равномерно распределено между всеми дочерними элементами.</p>
+            <p>Если один из&nbsp;элементов имеет значение&nbsp;2, другой значение&nbsp;1, третий элемент значение равным&nbsp;0, то&nbsp;элемент со&nbsp;значением 2&nbsp;займет в&nbsp;два раза больше свободного места, чем остальные элемент со&nbsp;значением&nbsp;1, элемент со&nbsp;значением 0&nbsp;не изменит свою ширину.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство flex-shrink</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="item">
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number" min="0" autocomplete="off" value="1">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number" min="0" autocomplete="off" value="1">
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number" min="0" autocomplete="off" value="1">
+              </div>
+            </li>
+          </ul>
+          <div class="flex-items" data-prop="flex-shrink">
+            <div class="flex-item one flex-shrink-one" data-ordinal="one">1</div>
+            <div class="flex-item two flex-shrink-two" data-ordinal="two">2</div>
+            <div class="flex-item three flex-shrink-three" data-ordinal="three">3</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Если ширина флекс-элемента, или сумма ширин флекс-элементов, больше, чем ширина флекс-контейнера, то&nbsp;такие флекс-элементы будут сужаться, чтобы разместиться в&nbsp;своем контейнере. Разница между суммой ширин флекс-элементов и&nbsp;шириной флекс-контейнера, называется отрицательным свободным пространством.</p>
+            <p>Значение свойства <code>flex-shrink</code> по&nbsp;умолчанию равно 1&nbsp;и&nbsp;устанавливает коэффициент сжатия flex-элемента относительно других flex-элементов при распределении отрицательного свободного пространства.</p>
+            <p>Это свойство определяет способность флекс-элемента сжиматься в&nbsp;случае необходимости. Как и <code>flex-grow</code>, принимает значения в&nbsp;виде целых положительных чисел, но&nbsp;определяет&nbsp;то, насколько элемент будет сужаться по&nbsp;отношению к&nbsp;другим флекс-элементам, чтобы разместиться с&nbsp;ними в&nbsp;одну строку.</p>
+            <p>При значении, отличном от&nbsp;0&nbsp;элементы могут сужаться, если их&nbsp;ширина (сумма ширин) больше, чем ширина флекс-контейнера.</p>
+            <p>Если элементу задать значение&nbsp;0, то&nbsp;он&nbsp;&laquo;расправит плечи&raquo;, если его ширина больше ширины флекс-контейнера, или сумма ширин флекс-элементов больше, чем ширина их&nbsp;контейнера. Значение 0&nbsp;запрещает флекс-элементу сужаться.<p>
+            <p>Если увеличивать значение <code>flex-shrink</code>, то&nbsp;увидим как элемент сужается по&nbsp;отношению к&nbsp;другим флекс-элементам.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="property-title">Свойство flex-basis</h3>
+      <div class="wrapper">
+        <div class="container visual" data-id="item">
+          <ul class="inputs">
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 1</span><input class="inputs__field" data-ordinal="one" type="number" min="0" step="10">
+              </div>
+              <div class="inputs-units-buttons">
+                <button class="button inputs-units-button active" data-value="auto">auto</button>
+                <button class="button inputs-units-button" data-value="px">px</button>
+                <button class="button inputs-units-button" data-value="%">%</button>
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 2</span><input class="inputs__field" data-ordinal="two" type="number" min="0" step="10">
+              </div>
+              <div class="inputs-units-buttons">
+                <button class="button inputs-units-button active" data-value="auto">auto</button>
+                <button class="button inputs-units-button" data-value="px">px</button>
+                <button class="button inputs-units-button" data-value="%">%</button>
+              </div>
+            </li>
+            <li class="inputs__item">
+              <div class="inputs__container">
+                <span class="inputs__text">flex item 3</span><input class="inputs__field" data-ordinal="three" type="number" min="0" step="10">
+              </div>
+              <div class="inputs-units-buttons">
+                <button class="button inputs-units-button active" data-value="auto">auto</button>
+                <button class="button inputs-units-button" data-value="px">px</button>
+                <button class="button inputs-units-button" data-value="%">%</dbuttoniv>
+              </div>
+            </li>
+          </ul>
+          <div class="flex-items" data-prop="flex-basis">
+            <div class="flex-item one" data-ordinal="one">1</div>
+            <div class="flex-item two" data-ordinal="two">2</div>
+            <div class="flex-item three" data-ordinal="three">3</div>
+          </div>
+        </div>
+        <div class="container description">
+          <div class="explanation">
+            <p>Это свойство определяет базовый (начальный, основной) размер элемента по&nbsp;умолчанию до&nbsp;распределением оставшегося пространства в&nbsp;соответствии со&nbsp;свойствами <code>flex-grow</code> и <code>flex-shrink</code>.</p>
+            <p>Конечная ширина флекс-элемента будет зависеть от&nbsp;базовой ширины, установленно свойством <code>flex-basis</code>, и&nbsp;значений <code>flex-grow</code>, <code>flex-shrink</code>, а&nbsp;также от&nbsp;величины контента.</p>
+            <p>По&nbsp;умолчанию значение <code>auto</code>.</p>
+            <p>Если установлено значение&nbsp;0, дополнительное пространство вокруг содержимого не&nbsp;учитывается.</p>
+          </div>
+          <div class="example-css-code">
+            <p>Тут будет CSS код</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="app-container">
+      <div class="links">
+        <a class="link" href="https://github.com/AlxLebedev/" target="_blank"><svg><use xlink:href="#github"></use></svg><span>Разработка и UX</span></a>
+        <a class="link" href="https://github.com/skorobaeus/" target="_blank"><svg><use xlink:href="#github"></use></svg><span>UI дизайн</span></a>
+        <a class="link" href="https://github.com/AlxLebedev/flexbox-visual/" target="_blank"><svg><use xlink:href="#github"></use></svg><span>Проект на GitHub</span></a>
+      </div>
+      <p class="copyright">Сделано студентом <a class="link" href="https://netology.ru" target="_blank"><svg><use xlink:href="#netology"></use></svg> Нетологии</a>, 2020</p>
+    </div>
+  </footer>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>
